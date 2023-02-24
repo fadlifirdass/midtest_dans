@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -29,10 +29,9 @@ const Navbar = () => {
     
       <div id="navbarBasicExample" className="navbar-menu">
       <div className="navbar-start">
-          <a className="navbar-item">Home
+          <a className="navbar-item"><Link to="/dashboard">Home</Link>
           </a>
-          <a className="navbar-item">
-            Product List
+          <a className="navbar-item"><Link to="/productlist">Products List</Link>
           </a>
         </div>
     
