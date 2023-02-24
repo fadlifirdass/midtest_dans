@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import axios from 'axios'
 
@@ -7,7 +7,6 @@ import axios from 'axios'
 const ProductList = () => {
 
     const [products, setProduct] = useState([])
-    const {id} = useParams()
 
     useEffect(()=>{
       getProducts()
@@ -15,7 +14,7 @@ const ProductList = () => {
     
     const getProducts = async () => {
         const response = await axios.get('http://localhost:5000/products')
-        console.log(response.data)
+        setProduct(response.data.products)
     }
 
   return (
